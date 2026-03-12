@@ -9,7 +9,7 @@ import axios from  "axios";
 export const register=(newUser)=> async (dispatch)=> {
     dispatch ({type:LOAD_USER})
     try {
-        let result= await axios.post("http://localhost:4321/api/user/register",newUser)
+        let result= await axios.post("https://cp-dep-finale2.onrender.com/api/user/register",newUser)
         dispatch ({type:REGISTER_USER,payload:result.data})
     } catch (error) {
                 dispatch ({type:FAIL_USER,payload:error.response.data.errors})
@@ -24,7 +24,7 @@ export const register=(newUser)=> async (dispatch)=> {
 export const login =(user)=> async (dispatch)=>  {
         dispatch ({type:LOAD_USER})
 try {
-            let result= await axios.post("http://localhost:4321/api/user/login",user)
+            let result= await axios.post("https://cp-dep-finale2.onrender.com/api/user/login",user)
         dispatch ({type:LOGIN_USER,payload:result.data})
 
     
@@ -47,7 +47,7 @@ export const current=()=> async (dispatch)=> {
 
 
     }
-                let result= await axios.get("http://localhost:4321/api/user/current",config)
+                let result= await axios.get("https://cp-dep-finale2.onrender.com/api/user/current",config)
 
         dispatch ({type:CURRENT_USER,payload:result.data})
 
